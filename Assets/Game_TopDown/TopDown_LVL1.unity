@@ -835,10 +835,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2bbdbbf7bc9a0b43a9276522fcc11de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerTopDown
-  speed: 3
+  speed: 5
   left: -5
   right: 5
   bottom: -3
+  top: 20
 --- !u!1 &476857863
 GameObject:
   m_ObjectHideFlags: 0
@@ -1048,7 +1049,7 @@ Transform:
   m_GameObject: {fileID: 544025755}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.7999997, y: 8.48478, z: 0}
+  m_LocalPosition: {x: -8.46, y: 8.48478, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1734,7 +1735,7 @@ Transform:
   m_GameObject: {fileID: 1161721915}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.8, y: 0.2, z: 0}
+  m_LocalPosition: {x: -8.46, y: 0.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2822,7 +2823,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CamSmooth
   target: {fileID: 402886220}
-  smooth: 0
+  smooth: 5
   offset: {x: 0, y: 0, z: -10}
 --- !u!1 &1804511698
 GameObject:
@@ -3598,7 +3599,7 @@ Transform:
   m_GameObject: {fileID: 2017195189}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.3940697, y: 9.16478, z: 0}
+  m_LocalPosition: {x: -8.46, y: 9.16478, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
