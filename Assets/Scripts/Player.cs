@@ -128,7 +128,7 @@ public class Player : MonoBehaviour
 
     // Agregamos animaciones
 
-    private float speed = 8f;
+    /* private float speed = 8f;
     private Rigidbody2D rb;
     [SerializeField] private float JumpForce = 8f;
     private Animator animator; // Agregamos variable Animator, componente del Inspector
@@ -151,7 +151,42 @@ public class Player : MonoBehaviour
 
         animator.SetFloat("movX", Mathf.Abs(horizontal)); // Llamamos al parámetro float del Animator en el eje X 
         animator.SetBool("isGrounded", JumpCollider.isGrounded); // Tomamos el parámetro booleano del Animator y la variable "isGrounded" de la clase JumpCollider
+    }*/
+    
+    // Insertamos límites
+    
+    private float speed = 8f;
+    private Rigidbody2D rb;
+    [SerializeField] private float JumpForce = 8f;
+    private Animator animator;
 
+    [SerializeField] private float left;
+    [SerializeField] private float right;
+    [SerializeField] private float bottom;
+    [SerializeField] private float top;
+
+
+    void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+    }
+
+    void Update()
+    {
+        float horizontal = Input.GetAxis("Horizontal");
+
+        rb.transform.Translate(new Vector2(horizontal, 0) * Time.deltaTime * speed);
+        if (Input.GetKeyDown(KeyCode.Space) && JumpCollider.isGrounded == true)
+        {
+            rb.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
+        }
+
+        animator.SetFloat("movX", Mathf.Abs(horizontal)); 
+        animator.SetBool("isGrounded", JumpCollider.isGrounded); 
+
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, left, right), Mathf.Clamp(transform.position.y, bottom, top), transform.position.z);
 
     }
+
 }
