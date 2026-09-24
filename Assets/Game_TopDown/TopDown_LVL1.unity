@@ -916,8 +916,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   projectilePrefab: {fileID: 4277815936602705893, guid: c04f35f2a0f2e00478214f1305ebeefe, type: 3}
   launchPoint: {fileID: 1749604867}
-  shootTime: 5
-  shootCounter: 1
+  shootTime: 0.3
+  shootCounter: 0
 --- !u!1 &476857863
 GameObject:
   m_ObjectHideFlags: 0
@@ -2857,7 +2857,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 18.88
+  orthographic size: 9.3
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2972,7 +2972,7 @@ Transform:
   m_GameObject: {fileID: 1749604866}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.02, y: 1.53, z: 0}
+  m_LocalPosition: {x: 0.02, y: 1.71, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
