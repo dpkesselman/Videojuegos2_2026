@@ -16,6 +16,7 @@ public class PlayerTopDown : MonoBehaviour
     [SerializeField] private float bottom;
     [SerializeField] private float top;
 
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -46,10 +47,10 @@ public class PlayerTopDown : MonoBehaviour
 
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, left, right), Mathf.Clamp(transform.position.y, bottom, top), transform.position.z);
 
-        if(Input.GetMouseButtonDown(0))
+        /*if(Input.GetMouseButtonDown(0))
         {
            animator.SetTrigger("Shoot"); 
-        }        
+        } */       
     }
 
 
