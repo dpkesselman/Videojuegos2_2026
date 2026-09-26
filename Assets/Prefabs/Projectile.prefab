@@ -102,7 +102,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4277815936602705893}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -146,7 +146,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -167,6 +167,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4277815936602705893}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f22b45f84a160745b8a433fcf19e53f, type: 3}
+  m_Script: {fileID: 11500000, guid: 47f08d9b11ff20e4abc4818e3c729ae8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  projectileRb: {fileID: 2627708278074968155}
+  speed: 5
+  projectileLife: 5
+  projectileCount: 2

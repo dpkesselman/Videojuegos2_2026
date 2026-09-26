@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -165,6 +166,14 @@ public class Player : MonoBehaviour
     [SerializeField] private float bottom;
     [SerializeField] private float top;
 
+    //Llamar al sound manager
+    SoundManager soundManager;
+
+    void Awake()
+    {
+        soundManager = GameObject.FindGameObjectWithTag("Sound").GetComponent<SoundManager>();
+    }
+
 
     void Start()
     {
@@ -180,6 +189,7 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && JumpCollider.isGrounded == true)
         {
             rb.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
+            soundManager.PlaySFX(soundManager.jump);
         }
 
         animator.SetFloat("movX", Mathf.Abs(horizontal)); 
