@@ -4,7 +4,9 @@ public class nombredelscript : MonoBehaviour
 {
     void Start()
     {
-        // Switch to 1920 x 1080 full-screen
+        float xx = Screen.width;
+        float yy = Screen.height;
         Screen.SetResolution(1920, 1080, true);
+        Camera.main.aspect = xx / yy;
     }
 }

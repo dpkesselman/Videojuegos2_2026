@@ -488,6 +488,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LevelManager
   pauseButton: {fileID: 1603857257}
   pauseMenu: {fileID: 1617922165}
+  SoundManager: {fileID: 599429262}
 --- !u!1 &836577379
 GameObject:
   m_ObjectHideFlags: 0

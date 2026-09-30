@@ -8,6 +8,7 @@ public class LevelManager : MonoBehaviour
 {
     [SerializeField] private GameObject pauseButton;
     [SerializeField] private GameObject pauseMenu;
+    [SerializeField] private GameObject SoundManager;
     private bool isPaused = false; // Booleano para pausar y reanudar con un botón
 
     public static LevelManager instance; 
@@ -52,6 +53,7 @@ public class LevelManager : MonoBehaviour
 
     public void ReloadGame()
     {
+        Destroy(SoundManager);
         SceneManager.LoadScene(0);
     }
 
