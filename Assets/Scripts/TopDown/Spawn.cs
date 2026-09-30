@@ -2,45 +2,43 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public class Spawn : MonoBehaviour
-{    
-    [SerializeField] private GameObject[] _toSpawn;
-    [SerializeField] private float secondSpawn = 0.7f;
-    [SerializeField] private float minTras;
-    [SerializeField] private float maxTras;
+{
+    [SerializeField] private GameObject[] enemigoPrefab; // Prefab del enemigo
+    [SerializeField] private Transform jugador;   // Referencia al objeto del jugador
+    [SerializeField] private float intervaloDeSpawn = 3f; // Intervalo de tiempo entre spawns
+    [SerializeField] private float distanciaDeSpawn = 5f; // Distancia desde el jugador donde spawnearán los enemigos
+    
+    [SerializeField] private float left;
+    [SerializeField] private float right;
+    [SerializeField] private float bottom;
+    [SerializeField] private float top;
 
+    // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(ObjectSpawn());
+        jugador = GameObject.FindGameObjectWithTag("Player")?.transform; // Buscar el objeto del jugador
+        if (jugador == null) { 
+            Debug.LogError("No se encontró el objeto del jugador."); 
+            return; 
+        }
+        StartCoroutine(SpawnEnemigos()); // Iniciar la corrutina para spawnear enemigos
     }
 
-    void Update()
+    private IEnumerator SpawnEnemigos()
     {
-        if (Score.score >= 25 && Score.score <= 50) 
+        while (true)
         {
-            secondSpawn = 0.5f;
-        }
 
-        else if (Score.score >= 51 && Score.score <= 75) 
-        {
-            secondSpawn = 0.4f;
-        }
-        
-        else if (Score.score >= 76 && Score.score <100) 
-        {
-            secondSpawn = 0.2f;
-        }
-    }
+            if (jugador == null) { yield break; }
 
-    IEnumerator ObjectSpawn()
-    {
-        while(true)
-        {
-            var wanted = Random.Range(minTras, maxTras);
-            var position = new Vector3(wanted, wanted);
-            GameObject objectSpawning = Instantiate(_toSpawn[Random.Range(0, _toSpawn.Length)], position, Quaternion.identity);
-            yield return new WaitForSeconds(secondSpawn);
+            for (int i = 0; i < 1; i++)
+            {
+                Vector3 spawnPosition = jugador.position + (Vector3)(Random.insideUnitCircle.normalized * distanciaDeSpawn);
+                Instantiate(enemigoPrefab[i], spawnPosition, Quaternion.identity);
+                transform.position = new Vector3(Mathf.Clamp(transform.position.x, left, right), Mathf.Clamp(transform.position.y, bottom, top), transform.position.z);
+            }
+            yield return new WaitForSeconds(intervaloDeSpawn); // Esperar 3 segundos antes de spawnear de nuevo
         }
     }
 }

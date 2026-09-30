@@ -6,8 +6,8 @@ public class ProjectileLaunch : MonoBehaviour
     [SerializeField] private Transform launchPoint;
 
 
-    [SerializeField] private float shootTime; // enfriamiento entre proyectiles
-    [SerializeField] private float shootCounter; // temporizador de enfriamiento
+    [SerializeField] private float shootTime; // tiempo entre cada disparo
+    [SerializeField] private float shootCounter; 
 
 
     void Start()
