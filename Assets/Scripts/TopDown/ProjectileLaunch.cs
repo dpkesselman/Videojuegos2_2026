@@ -4,9 +4,7 @@ public class ProjectileLaunch : MonoBehaviour
 {
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private Transform launchPoint;
-
-
-    [SerializeField] private float shootTime; // tiempo entre cada disparo
+    [SerializeField] private float shootTime; 
     [SerializeField] private float shootCounter; 
 
 
@@ -18,7 +16,7 @@ public class ProjectileLaunch : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetMouseButtonDown(0) && shootCounter <= 0)
+        if (shootCounter <= 0)
         {
             Instantiate(projectilePrefab, launchPoint.position, Quaternion.identity);
             // Instantiate = spawn. Toma tres valores:

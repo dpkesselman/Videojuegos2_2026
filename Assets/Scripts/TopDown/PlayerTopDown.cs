@@ -30,7 +30,7 @@ public class PlayerTopDown : MonoBehaviour
         float vertical = Input.GetAxis("Vertical");
         movementInput = new Vector2(horizontal, vertical).normalized;
 
-         if (movementInput.sqrMagnitude > 0.01f)
+        if (movementInput.sqrMagnitude > 0.01f)
         {
             // Calcula el ángulo en base a Y y X
             float targetAngle = Mathf.Atan2(movementInput.y, movementInput.x) * Mathf.Rad2Deg;
