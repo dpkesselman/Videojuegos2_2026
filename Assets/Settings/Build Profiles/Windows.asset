@@ -23,7 +23,13 @@ MonoBehaviour:
   m_OverrideGlobalSceneList: 1
   m_Scenes:
   - m_enabled: 1
-    m_path: Assets/Game_TopDown/TopDown_LVL1.unity
+    m_path: Assets/Scenes/Main.unity
+    m_guid: 542b4ba87c582b04ea2dd09076b28a3d
+  - m_enabled: 1
+    m_path: Assets/Scenes/Game_Platformer/Platformer_LVL1.unity
+    m_guid: 240a8e9ca3afc3f4a85b2d296eea7050
+  - m_enabled: 1
+    m_path: Assets/Scenes/Game_TopDown/TopDown_LVL1.unity
     m_guid: 948bd1e13cf956641a6eea4c6485d739
   m_HasScriptingDefines: 0
   m_ScriptingDefines: []

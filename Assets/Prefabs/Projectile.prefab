@@ -172,6 +172,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   projectileRb: {fileID: 2627708278074968155}
   speed: 12.01
-  projectileLife: 5
+  projectileLife: 1
   projectileCount: 2
-  projectileTarget: {fileID: 6393673546769839280, guid: 87ead5b8adcb2204b85820acf96e97bc, type: 3}

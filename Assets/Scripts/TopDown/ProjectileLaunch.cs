@@ -18,10 +18,10 @@ public class ProjectileLaunch : MonoBehaviour
     {
         if (shootCounter <= 0)
         {
-            Instantiate(projectilePrefab, launchPoint.position, Quaternion.identity);
+            Instantiate(projectilePrefab, launchPoint.position + launchPoint.forward + launchPoint.up, launchPoint.rotation);
             // Instantiate = spawn. Toma tres valores:
             // 1. Qué vas a instanciar - 2. Dónde lo vas a isntanciar - 3. Qué rotación va a tener el objeto
-            // Quaternion: una forma de representar la rotación en un espacio 3D. Si se acompaña de .identity significa que el objeto mantendrá su rotación original.
+
             shootCounter = shootTime;
         }        
 
