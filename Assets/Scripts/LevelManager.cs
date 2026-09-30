@@ -4,14 +4,15 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class TheRealGameManager : MonoBehaviour
+public class LevelManager : MonoBehaviour
 {
-    private GameObject pauseButton;
-    private GameObject pauseMenu;
-    public static TheRealGameManager instance;
-    
+    [SerializeField] private GameObject pauseButton;
+    [SerializeField] private GameObject pauseMenu;
     private bool isPaused = false; // Booleano para pausar y reanudar con un botón
 
+    public static LevelManager instance; 
+    
+        
     void Awake()
     {
         //Código para que la instancia no se repita por error
@@ -26,23 +27,13 @@ public class TheRealGameManager : MonoBehaviour
         }
     }
 
-
-    public void PlayFragmentado()
-    {
-        SceneManager.LoadScene("Platformer_LVL1");
-    }
-
-    public void PlayCieloRojo()
-    {
-        SceneManager.LoadScene("TopDown_LVL1");
-    }
-    
     public void Pause()
     {
         isPaused = true; 
         Time.timeScale = 0f;
         pauseButton.SetActive(false);
         pauseMenu.SetActive(true);
+        DontDestroyOnLoad(gameObject);
     }
 
     public void Resume()
@@ -64,6 +55,7 @@ public class TheRealGameManager : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
+    
     public void Quit()
     {
         Application.Quit();
