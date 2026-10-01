@@ -5,14 +5,15 @@ using UnityEngine;
 public class AddPoints : MonoBehaviour
 {
     public int pointsToAdd;
-    [SerializeField] private ParticleSystem particles;
+    //[SerializeField] private ParticleSystem particles;
 
     void OnTriggerEnter2D(Collider2D other)
     {
         if(other.CompareTag("Player"))
         {
-            particles.Play();
+            //particles.Play();
             PointSytem.Instance.AddingPoints(pointsToAdd);            
+            Destroy(gameObject);
         }
     }
 }
