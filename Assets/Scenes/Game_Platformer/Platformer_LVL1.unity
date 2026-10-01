@@ -141,9 +141,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1688464cfade8ad4cb06ab76809c3142, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HP
-  HPAmount: 10
-  MaxHP: 10
-  hpbar: {fileID: 0}
+  HPAmount: 100
+  MaxHP: 100
+  hpbar: {fileID: 202003216}
 --- !u!1 &202003213
 GameObject:
   m_ObjectHideFlags: 0
@@ -1824,7 +1824,7 @@ GameObject:
   - component: {fileID: 1278210220}
   - component: {fileID: 1278210219}
   m_Layer: 0
-  m_Name: GainHP
+  m_Name: Gold
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14245,6 +14245,10 @@ PrefabInstance:
     - target: {fileID: 8808148521021599435, guid: 919523ae31bc018409c6bfc551930358, type: 3}
       propertyPath: m_Name
       value: Enemy_Patrol
+      objectReference: {fileID: 0}
+    - target: {fileID: 8808148521021599435, guid: 919523ae31bc018409c6bfc551930358, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

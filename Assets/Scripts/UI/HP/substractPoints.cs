@@ -11,7 +11,7 @@ public class substractPoints : MonoBehaviour
         if(other.gameObject.tag == "Player")
         {
             PointSytem.Instance.SubstractingPoints(pointsToSubstract);
-            other.gameObject.GetComponent<HP>().TakeDamage(2);
+            other.gameObject.GetComponent<HP>().TakeDamage(20);
         }
     }
 }

@@ -12,7 +12,8 @@ public class AddPoints : MonoBehaviour
         if(other.CompareTag("Player"))
         {
             //particles.Play();
-            PointSytem.Instance.AddingPoints(pointsToAdd);            
+            PointSytem.Instance.AddingPoints(pointsToAdd);
+            other.gameObject.GetComponent<HP>().GainHealth(20);            
             Destroy(gameObject);
         }
     }

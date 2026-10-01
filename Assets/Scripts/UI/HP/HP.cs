@@ -19,4 +19,10 @@ public class HP : MonoBehaviour
         HPAmount -= damage;
         HPBar.Instance.ChangeCurrentHP(HPAmount);
     }
+
+    public void GainHealth(int health)
+    {
+        HPAmount += health;
+        HPBar.Instance.ChangeCurrentHP(HPAmount);
+    }
 }
